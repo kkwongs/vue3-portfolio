@@ -1,26 +1,33 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <main-header></main-header>
+  <masthead-section></masthead-section>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import MainHeader from './components/MainHeader.vue'
+import MastheadSection from './components/MastheadSection.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    MainHeader,
+    MastheadSection
   }
 }
 </script>
 
-<style>
+<style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 72px;
+  font-family: 'Lato', sans-serif;
+  a {
+    text-decoration: none;
+  }
+  .inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    position: relative;
+  }
 }
 </style>
