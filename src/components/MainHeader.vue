@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="inner">
-      <div class="title">
+      <div class="logo">
         <a href="#">KKWONG'S Portfolio</a>
       </div>
       <ul class="menu">
@@ -34,7 +34,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    .title {
+    .logo {
       margin-left: 32px;
       a {
         color: #f5f5f7;
@@ -53,7 +53,7 @@ header {
       margin-right: 32px;
       display: flex;
       li {
-        margin: 5px;
+        margin: 10px;
         a {
           color: #f5f5f7;
           font-weight: 700;

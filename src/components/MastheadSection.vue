@@ -19,7 +19,6 @@ export default {
 
 <style lang="scss" scoped>
 .masthead {
-  height: 560px;
   color: #f5f5f7;
   background-image: url('../assets/masthead-background.jpg');
   background-size: cover;
@@ -33,17 +32,13 @@ export default {
     height: 100%;
     position: absolute;
   }
-  .title {
-    text-align: center;
-    font-size: 56px;
-    font-weight: 700;
-    padding-top: 150px;
-  }
-  .description {
-    text-align: center;
-    font-size: 28px;
-    padding-top: 64px;
-    line-height: 1.5;
+  .inner {
+    height: 560px;    
+    .description {
+      text-align: center;
+      font-size: 28px;
+      line-height: 1.5;
+    }
   }
 }
 </style>

@@ -1,25 +1,35 @@
 <template>
-  <main-header></main-header>
-  <masthead-section></masthead-section>
+  <MainHeader />
+  <MastheadSection />
+  <AboutMeSection />
+  <ProjectsSection />
+  <MainFooter />
 </template>
 
 <script>
 import MainHeader from './components/MainHeader.vue'
 import MastheadSection from './components/MastheadSection.vue'
+import AboutMeSection from './components/AboutMeSection.vue'
+import ProjectsSection from './components/ProjectsSection.vue'
+import MainFooter from './components/MainFooter.vue'
 
 export default {
   name: 'App',
   components: {
     MainHeader,
-    MastheadSection
+    MastheadSection,
+    AboutMeSection,
+    ProjectsSection,
+    MainFooter
   }
 }
 </script>
 
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
 #app {
   color: #2c3e50;
-  margin-top: 72px;
   font-family: 'Lato', sans-serif;
   a {
     text-decoration: none;
@@ -28,6 +38,26 @@ export default {
     max-width: 1140px;
     margin: 0 auto;
     position: relative;
+    >.title {
+      text-align: center;
+      font-size: 56px;
+      font-weight: 700;
+      padding-top: 150px;
+      padding-bottom: 72px;
+    }
+  }
+  .btn {
+    padding: 10px 5px;
+    border: 2px solid #222;
+    border-radius: 4px;
+    color: #333;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  .btn:hover {
+    background-color: #222;
+    color: #fff;
   }
 }
 </style>
