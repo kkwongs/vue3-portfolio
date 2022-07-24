@@ -3,7 +3,9 @@
     <div class="inner">
       <div class="title">Projects</div>
       <SwiperProject />
-      <DetailProject v-if="isShowProject" />
+      <transition name="fade">
+        <DetailProject v-if="isShowProject" />
+      </transition>
     </div>
   </section>
 </template>

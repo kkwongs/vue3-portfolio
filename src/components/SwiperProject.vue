@@ -8,13 +8,13 @@
     :modules="modules"
   >
     <swiper-slide 
-      v-for="projectImage in projectImages" 
-      :key="projectImage"
+      v-for="project in projects" 
+      :key="project"
     >
-      <img :src="require(`../assets/projects/project${projectImage}.png`)" alt="Project Image">
+      <img :src="require(`../assets/projects/project${project}.png`)" alt="Project Image">
       <div
         class="btn"
-        @click="showProject"
+        @click="showProject(project)"
       >
         자세히 보기
       </div>
@@ -44,12 +44,12 @@ export default {
   },
   data() {
     return {
-      projectImages: ['1', '2', '3']
+      projects: ['1', '2', '3']
     }
   },
   methods: {
-    showProject() {
-      this.$store.commit('showProject')
+    showProject(projectNum) {
+      this.$store.commit('showProject', projectNum)
     }
   }
 }

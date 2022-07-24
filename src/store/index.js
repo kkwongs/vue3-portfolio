@@ -1,14 +1,23 @@
 import { createStore } from 'vuex'
+import project from './project'
 
 export default createStore({
+  modules: {
+    project
+  },
   state() {
     return {
-      isShowProject: false
+      isShowProject: false,
+      projectNum: ''
     }
   },
   mutations: {
-    showProject(state) {
-      state.isShowProject = !state.isShowProject;
+    showProject(state, payload) {
+      state.isShowProject = true;
+      state.projectNum = payload;
+    },
+    closeProject(state) {
+      state.isShowProject = false;
     }
   }
 })

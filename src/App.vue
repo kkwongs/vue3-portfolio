@@ -4,6 +4,7 @@
   <AboutMeSection />
   <ProjectsSection />
   <MainFooter />
+  <ScrollTop />
 </template>
 
 <script>
@@ -12,6 +13,7 @@ import MastheadSection from './components/MastheadSection.vue'
 import AboutMeSection from './components/AboutMeSection.vue'
 import ProjectsSection from './components/ProjectsSection.vue'
 import MainFooter from './components/MainFooter.vue'
+import ScrollTop from './components/ScrollTop.vue'
 
 export default {
   name: 'App',
@@ -20,7 +22,8 @@ export default {
     MastheadSection,
     AboutMeSection,
     ProjectsSection,
-    MainFooter
+    MainFooter,
+    ScrollTop
   }
 }
 </script>
@@ -58,6 +61,14 @@ export default {
   .btn:hover {
     background-color: #222;
     color: #fff;
+  }
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 0.5s ease;
+  }
+  .fade-enter-from,
+  .fade-leave-to {
+    opacity: 0;
   }
 }
 </style>
