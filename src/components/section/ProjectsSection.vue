@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import SwiperProject from './SwiperProject.vue';
-import DetailProject from './DetailProject.vue';
+import SwiperProject from '@/components/project/SwiperProject.vue';
+import DetailProject from '@/components/project/DetailProject.vue';
 
 export default {
   components: {

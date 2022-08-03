@@ -2,7 +2,7 @@
   <footer>
     <div class="inner">
       <a href="https://github.com/kkwongs" target="_blank" class="git-logo">
-        <img src="../assets/git-hub-logo.png" alt="GitHub" />
+        <img src="@/assets/git-hub-logo.png" alt="GitHub" />
       </a>
       <div class="copyright">&copy; 2021. KKOWNG'S. All Rights Reserved</div>
     </div>

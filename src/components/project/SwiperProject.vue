@@ -11,7 +11,7 @@
       v-for="project in projects" 
       :key="project"
     >
-      <img :src="require(`../assets/projects/project${project}.png`)" alt="Project Image">
+      <img :src="require(`@/assets/projects/project${project}.png`)" alt="Project Image">
       <div
         class="btn"
         @click="showProject(project)"

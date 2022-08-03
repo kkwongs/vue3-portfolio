@@ -2,14 +2,14 @@
   <header>
     <div class="inner">
       <div class="logo">
-        <a href="#">KKWONG'S Portfolio</a>
+        <router-link to="/">KKWONG'S Portfolio</router-link>
       </div>
       <ul class="menu">
         <li>
-          <a href="#about-me">About me</a>
+          <router-link to="/#about-me">About me</router-link>
         </li>
         <li>
-          <a href="#projects">Projects</a>
+          <router-link to="/#projects">Projects</router-link>
         </li>
       </ul>
     </div>

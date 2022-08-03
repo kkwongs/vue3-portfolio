@@ -20,7 +20,7 @@ export default {
 <style lang="scss" scoped>
 .masthead {
   color: #f5f5f7;
-  background-image: url('../assets/masthead-background.jpg');
+  background-image: url('@/assets/masthead-background.jpg');
   background-size: cover;
   background-attachment: fixed;
   background-position: center;

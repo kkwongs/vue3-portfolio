@@ -1,6 +1,8 @@
 <template>
-  <transition name="fade">
-    <ArrowUpBoldIcon :size="36" class="material-icons" v-show="isShow" @click="top"/>
+  <transition name="fade" v-show="isShow">
+    <router-link to="/">
+      <ArrowUpBoldIcon :size="36" class="material-icons" />
+    </router-link>
   </transition>
 </template>
 
@@ -27,15 +29,18 @@ export default {
     scroll() {
       if(window.scrollY > 300) this.isShow = true
       else this.isShow = false
-    },
-    top() {
-      window.scroll(0, 0);
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s ease-out;
+}
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
+}
 .material-icons {
   width: 36px;
   height: 36px;
