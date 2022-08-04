@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import SwiperProject from '@/components/project/SwiperProject.vue';
 import DetailProject from '@/components/project/DetailProject.vue';
 
@@ -20,9 +21,7 @@ export default {
     DetailProject
   },
   computed: {
-    isShowProject() {
-      return this.$store.state.isShowProject;
-    }
+    ...mapState('project', ['isShowProject'])
   }
 }
 </script>

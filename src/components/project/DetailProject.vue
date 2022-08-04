@@ -2,7 +2,7 @@
   <div class="project-info">
     <div class="inner">
       <div class="cancel btn" @click="closeProject">닫기</div>
-      <div class="title">{{ projectInfo.title }}</div>
+      <div class="title">{{ projectInfo[projectNum].title }}</div>
       <hr />
       <ul class="info">
         <li>
@@ -14,19 +14,19 @@
             웹사이트:
             <a
               
-              :href="projectInfo.site"
+              :href="projectInfo[projectNum].site"
               target="_blank"
             >
-              {{ projectInfo.site }}
+              {{ projectInfo[projectNum].site }}
             </a>
           </div>
           <div class="description">
             Github:
             <a
-              :href="projectInfo.github"
+              :href="projectInfo[projectNum].github"
               target="_blank"
             >
-              {{ projectInfo.github }}
+              {{ projectInfo[projectNum].github }}
             </a>
           </div>
         </li>
@@ -36,7 +36,7 @@
             Summary
           </div>
           <div class="description">
-            <span v-html="projectInfo.description"></span>
+            <span v-html="projectInfo[projectNum].description"></span>
           </div>
         </li>
         <li>
@@ -45,7 +45,7 @@
             Technology
           </div>
           <div class="description">
-            <span v-html="projectInfo.technology"></span>
+            <span v-html="projectInfo[projectNum].technology"></span>
           </div>
         </li>
       </ul>
@@ -54,6 +54,7 @@
 </template>
 
 <script>
+import { mapState, mapMutations } from 'vuex'
 import LinkIcon from 'vue-material-design-icons/Link.vue';
 import FileDocumentIcon from 'vue-material-design-icons/FileDocument.vue';
 import ToolsIcon from 'vue-material-design-icons/Tools.vue';
@@ -65,17 +66,13 @@ export default {
     ToolsIcon
   },
   computed: {
-    projectNum() {
-      return this.$store.state.projectNum;
-    },
-    projectInfo() {
-      return this.$store.state.project.projectInfo[this.projectNum - 1];
-    }
+    ...mapState('project', [
+      'projectNum',
+      'projectInfo'
+    ])
   },
   methods: {
-    closeProject() {
-      this.$store.commit('closeProject')
-    }
+    ...mapMutations('project', ['closeProject'])
   }
 }
 </script>
@@ -126,7 +123,7 @@ export default {
         }
         .description {
           font-size: 18px;
-          line-height: 1.2;
+          line-height: 1.4;
           margin-top: 10px;
         }
       }

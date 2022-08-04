@@ -8,13 +8,13 @@
     :modules="modules"
   >
     <swiper-slide 
-      v-for="project in projects" 
-      :key="project"
+      v-for="(project, index) in projectInfo" 
+      :key="index"
     >
-      <img :src="require(`@/assets/projects/project${project}.png`)" alt="Project Image">
+      <img :src="project.image" alt="Project Image">
       <div
         class="btn"
-        @click="showProject(project)"
+        @click="showProject(index)"
       >
         자세히 보기
       </div>
@@ -23,6 +23,7 @@
 </template>
 
 <script>
+import { mapState, mapMutations } from 'vuex'
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Navigation, Pagination } from "swiper";
 import "swiper/scss";
@@ -42,15 +43,11 @@ export default {
       ],
     };
   },
-  data() {
-    return {
-      projects: ['1', '2', '3']
-    }
+  computed: {
+    ...mapState('project', ['projectInfo'])
   },
   methods: {
-    showProject(projectNum) {
-      this.$store.commit('showProject', projectNum)
-    }
+    ...mapMutations('project', ['showProject'])
   }
 }
 </script>
@@ -68,7 +65,6 @@ export default {
       display: block;
       width: 100%;
       height: 90%;
-      object-fit: cover;
     }
     .btn {
       width: 130px;
