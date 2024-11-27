@@ -1,125 +1,83 @@
 <template>
-  <section class="about-me" id="about-me">
-      <div class="inner">
-        <div class="title">About me</div>
-        <ul class="info">
-          <li>
-            <div class="info-wrapper">
-              <div class="materail-icons">
-                <AccountIcon />
-              </div>
-              <div>
-                <div class="title">이름</div>
-                <div class="description">권기현</div>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="info-wrapper">
-              <div class="materail-icons">
-                <CalendarIcon />
-              </div>
-              <div>
-                <div class="title">생년월일</div>
-                <div class="description">95.10.26</div>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="info-wrapper">
-              <div class="materail-icons">
-                <MapMarkerIcon />
-              </div>
-              <div>
-                <div class="title">주소</div>
-                <div class="description">경기도 용인시 기흥구</div>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="info-wrapper">
-              <div class="materail-icons">
-                <CellphoneIcon />
-              </div>
-              <div>
-                <div class="title">연락처</div>
-                <div class="description">010 6512 5741</div>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="info-wrapper">
-              <div class="materail-icons">
-                <EmailIcon />
-              </div>
-              <div>
-                <div class="title">이메일</div>
-                <div class="description">kihyun5741@gmail.com</div>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="info-wrapper">
-              <div class="materail-icons">
-                <SchoolIcon />
-              </div>
-              <div>
-                <div class="title">학력</div>
-                <div class="description">단국대학교 소프트웨어학과</div>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </section>
+  <SectionLayout title="About me">
+    <ul class="info-container">
+      <li class="info-item" v-for="item in items" :key="item">
+        <div>
+          <component v-if="!!item.icon" :is="item.icon" />
+        </div>
+        <div>
+          <div>{{ item.label }}</div>
+          <div>{{ item.content }}</div>
+        </div>
+      </li>
+    </ul>
+  </SectionLayout>
 </template>
 
 <script>
-import AccountIcon from 'vue-material-design-icons/Account.vue';
-import CalendarIcon from 'vue-material-design-icons/Calendar.vue';
-import MapMarkerIcon from 'vue-material-design-icons/MapMarker.vue';
-import CellphoneIcon from 'vue-material-design-icons/Cellphone.vue';
-import EmailIcon from 'vue-material-design-icons/Email.vue';
-import SchoolIcon from 'vue-material-design-icons/School.vue';
+import SectionLayout from "@/components/section/SectionLayout.vue";
 
 export default {
-  components: {
-    AccountIcon,
-    CalendarIcon,
-    MapMarkerIcon,
-    CellphoneIcon,
-    EmailIcon,
-    SchoolIcon
-  }
-}
+  components: { SectionLayout },
+  data() {
+    return {
+      items: [
+        { label: "이름", content: "권기현" },
+        { label: "생년월일", content: "1995.10.26" },
+        { label: "주소", content: "경기도 용인시 기흥구" },
+        { label: "연락처", content: "010-6512-5741" },
+        { label: "이메일", content: "kihyun5741@gmail.com" },
+        { label: "학력", content: "단국대학교 소프트웨어학과" },
+      ],
+    };
+  },
+  mounted() {
+    this.setIcon();
+  },
+  methods: {
+    async setIcon() {
+      this.items[0].icon = (
+        await import("vue-material-design-icons/Account.vue")
+      ).default;
+      this.items[1].icon = (
+        await import("vue-material-design-icons/Calendar.vue")
+      ).default;
+      this.items[2].icon = (
+        await import("vue-material-design-icons/MapMarker.vue")
+      ).default;
+      this.items[3].icon = (
+        await import("vue-material-design-icons/Cellphone.vue")
+      ).default;
+      this.items[4].icon = (
+        await import("vue-material-design-icons/Email.vue")
+      ).default;
+      this.items[5].icon = (
+        await import("vue-material-design-icons/School.vue")
+      ).default;
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-.about-me {
+.section-wrapper {
   background-color: #fbfbfd;
-  .inner {
-    height: 560px;
-    .info {
+  .info-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px 16px;
+    .info-item {
+      flex: 1;
       display: flex;
-      flex-wrap: wrap;
-      li {
-        width: 33.3%;
-        .info-wrapper {
-          height: 84px;
-          display: flex;
-          align-items: center;
-          padding-left: 25%;
-          box-sizing: border-box;
-          .materail-icons {
-            margin-right: 20px;
-          }
-          .title {
-            font-size: 28px;
-            margin-bottom: 5px;
-          }
-          .description {
-            font-size: 18px;
-          }
+      align-items: center;
+      gap: 20px;
+      min-width: 320px;
+
+      > :last-child {
+        display: grid;
+        gap: 8px;
+        > :first-child {
+          font-size: 1.5rem;
         }
       }
     }
