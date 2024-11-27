@@ -1,44 +1,40 @@
 <template>
-  <section class="masthead">
-      <div class="inner">
-        <div class="title">Front-End Developer</div>
-        <div class="description">
-          <p>안녕하세요.</p>
-          <p>배우는 것과 배운 지식을 적용하는 것을 좋아하는 웹 개발자입니다.</p>
-          <p>어떤 일을 하더라도 기본기를 중요하게 생각합니다.</p>
-        </div>
-      </div>
-    </section>
+  <SectionLayout title="PORTFOLIO">
+    <div class="content">
+      <p>안녕하세요</p>
+      <p>프론트엔드 개발자</p>
+      <p>권기현입니다</p>
+    </div>
+  </SectionLayout>
 </template>
 
 <script>
-export default {
+import SectionLayout from "@/components/section/SectionLayout.vue";
 
-}
+export default {
+  components: { SectionLayout },
+};
 </script>
 
 <style lang="scss" scoped>
-.masthead {
-  color: #f5f5f7;
-  background-image: url('@/assets/masthead-background.jpg');
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
+.section-wrapper {
   position: relative;
+  color: #f5f5f7;
   &::before {
     content: "";
-    background-color: rgba(110, 90, 80, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
     width: 100%;
     height: 100%;
-    position: absolute;
+    background: linear-gradient(rgba(110, 90, 80, 0.7), rgba(110, 90, 80, 0.7)),
+      url("@/assets/masthead-background.jpg") center / cover fixed;
   }
-  .inner {
-    height: 560px;    
-    .description {
-      text-align: center;
-      font-size: 28px;
-      line-height: 1.5;
-    }
+  .content {
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 1.5;
   }
 }
 </style>
