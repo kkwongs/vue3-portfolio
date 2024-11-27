@@ -15,6 +15,7 @@
 </template>
 
 <script>
+import { markRaw } from "vue";
 import SectionLayout from "@/components/section/SectionLayout.vue";
 
 export default {
@@ -36,24 +37,24 @@ export default {
   },
   methods: {
     async setIcon() {
-      this.items[0].icon = (
-        await import("vue-material-design-icons/Account.vue")
-      ).default;
-      this.items[1].icon = (
-        await import("vue-material-design-icons/Calendar.vue")
-      ).default;
-      this.items[2].icon = (
-        await import("vue-material-design-icons/MapMarker.vue")
-      ).default;
-      this.items[3].icon = (
-        await import("vue-material-design-icons/Cellphone.vue")
-      ).default;
-      this.items[4].icon = (
-        await import("vue-material-design-icons/Email.vue")
-      ).default;
-      this.items[5].icon = (
-        await import("vue-material-design-icons/School.vue")
-      ).default;
+      this.items[0].icon = markRaw(
+        (await import("vue-material-design-icons/Account.vue")).default
+      );
+      this.items[1].icon = markRaw(
+        (await import("vue-material-design-icons/Calendar.vue")).default
+      );
+      this.items[2].icon = markRaw(
+        (await import("vue-material-design-icons/MapMarker.vue")).default
+      );
+      this.items[3].icon = markRaw(
+        (await import("vue-material-design-icons/Cellphone.vue")).default
+      );
+      this.items[4].icon = markRaw(
+        (await import("vue-material-design-icons/Email.vue")).default
+      );
+      this.items[5].icon = markRaw(
+        (await import("vue-material-design-icons/School.vue")).default
+      );
     },
   },
 };
