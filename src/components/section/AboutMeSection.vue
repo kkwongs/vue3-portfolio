@@ -1,5 +1,5 @@
 <template>
-  <SectionLayout title="About me">
+  <SectionLayout title="About me" id="about-me">
     <ul class="info-container">
       <li class="info-item" v-for="item in items" :key="item">
         <div>
@@ -61,7 +61,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.section-wrapper {
+#about-me {
   background-color: #fbfbfd;
   .info-container {
     display: flex;
@@ -79,6 +79,7 @@ export default {
         gap: 8px;
         > :first-child {
           font-size: 1.5rem;
+          font-weight: 500;
         }
       }
     }
