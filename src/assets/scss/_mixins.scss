@@ -1,0 +1,36 @@
+@mixin button-text($color, $hover-bg: $color) {
+  color: color($color);
+  &:hover {
+    background-color: rgba(color($hover-bg), 0.1);
+  }
+  &:active {
+    background-color: rgba(color($hover-bg), 0.2);
+  }
+}
+
+@mixin button-contained(
+  $color,
+  $hover-color: white,
+  $hover-brightness: 1.1,
+  $active-brightness: 0.9
+) {
+  background-color: color($color);
+  color: $hover-color;
+  border-color: color($color);
+  &:hover {
+    filter: brightness($hover-brightness);
+  }
+  &:active {
+    filter: brightness($active-brightness);
+  }
+}
+
+@mixin button-outlined($color, $hover-bg: $color) {
+  color: color($color);
+  &:hover {
+    background-color: rgba(color($hover-bg), 0.1);
+  }
+  &:active {
+    background-color: rgba(color($hover-bg), 0.2);
+  }
+}
