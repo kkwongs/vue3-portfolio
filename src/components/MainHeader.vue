@@ -1,71 +1,67 @@
 <template>
-  <header>
-    <div class="inner">
-      <div class="logo">
-        <router-link to="/">KKWONG'S Portfolio</router-link>
+  <header class="header">
+    <div class="container">
+      <div>
+        <router-link to="/">
+          <Button size="large" color="light"> KKWONG'S Portfolio </Button>
+        </router-link>
       </div>
-      <ul class="menu">
-        <li>
-          <router-link to="/#about-me">About me</router-link>
-        </li>
-        <li>
-          <router-link to="/#projects">Projects</router-link>
-        </li>
-      </ul>
+      <div>
+        <ul class="section-nav">
+          <Button
+            v-for="(sectionName, sectionId) in sections"
+            :key="sectionId"
+            class="section-nav__button"
+            color="light"
+            @clicked="scrollToSection(sectionId)"
+          >
+            {{ sectionName }}
+          </Button>
+        </ul>
+      </div>
     </div>
   </header>
 </template>
 
 <script>
+import Button from "@/components/BaseButton.vue";
 export default {
+  name: "MainHeader",
+  components: { Button },
+  data() {
+    return {
+      sections: {
+        "about-me": "About me",
+        projects: "Projects",
+      },
+    };
+  },
+  methods: {
+    scrollToSection(sectionId) {
+      const headerHeight = document.querySelector(".header").offsetHeight;
+      const sectionOffset = document.getElementById(sectionId).offsetTop;
+      const top = sectionOffset - headerHeight;
 
-}
+      window.scrollTo({ top, behavior: "smooth" });
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-header {
-  width: 100%;
-  position: fixed;
+.header {
+  position: sticky;
   top: 0;
   z-index: 9;
   background-color: #222;
-  .inner {
-    height: 72px;
+  .container {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    .logo {
-      margin-left: 32px;
-      a {
-        color: #f5f5f7;
-        font-size: 24px;
-        font-weight: 700;
-        padding: 5px;
-        border-radius: 5px;
-        transition: .2s;
-        &:hover {
-          color: #333;
-          background: #fff;
-        }
-      }
-    }
-    .menu {
-      margin-right: 32px;
+    align-items: center;
+    padding: 20px 40px;
+    .section-nav {
       display: flex;
-      li {
-        margin: 10px;
-        a {
-          color: #f5f5f7;
-          font-weight: 700;
-          padding: 5px;
-          border-radius: 5px;
-          transition: 0.2s;
-          &:hover {
-            color: #333;
-            background-color: #fff;
-          }
-        }
-      }
+      gap: 12px;
     }
   }
 }
