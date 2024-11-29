@@ -3,7 +3,7 @@
     <div class="container">
       <div>
         <router-link to="/">
-          <Button size="large" color="light"> KKWONG'S Portfolio </Button>
+          <Button size="extra-large" color="light">KKWONG'S Portfolio</Button>
         </router-link>
       </div>
       <div>

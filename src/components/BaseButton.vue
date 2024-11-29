@@ -27,7 +27,7 @@ export default {
     },
     size: {
       type: String,
-      default: "medium", // small, medium, large
+      default: "medium", // small, medium, large, extra-large
     },
     disabled: {
       type: Boolean,
@@ -68,6 +68,7 @@ export default {
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
   border: none;
+  font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -75,7 +76,6 @@ export default {
 /* Variant: Text */
 .c-btn-text {
   background-color: transparent;
-  font-weight: bold;
 
   &.c-btn-primary {
     @include button-text($primary);
@@ -83,6 +83,10 @@ export default {
 
   &.c-btn-light {
     @include button-text($light);
+  }
+
+  &.c-btn-dark {
+    @include button-text($dark);
   }
 }
 
@@ -96,6 +100,10 @@ export default {
 
   &.c-btn-light {
     @include button-contained($light, inherit, 0.95);
+  }
+
+  &.c-btn-dark {
+    @include button-contained($dark, white, 1.25);
   }
 }
 
@@ -111,6 +119,10 @@ export default {
 
   &.c-btn-light {
     @include button-outlined($light);
+  }
+
+  &.c-btn-dark {
+    @include button-outlined($dark);
   }
 }
 
@@ -128,6 +140,11 @@ export default {
 
 /* Size: Large */
 .c-btn-large {
+  font-size: 1.125rem;
+  padding: 0.625rem 1.25rem;
+}
+/* Size: Extra Large */
+.c-btn-extra-large {
   font-size: 1.25rem;
   padding: 0.75rem 1.5rem;
 }

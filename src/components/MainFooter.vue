@@ -4,15 +4,13 @@
       <a href="https://github.com/kkwongs" target="_blank" class="git-logo">
         <img src="@/assets/git-hub-logo.png" alt="GitHub" />
       </a>
-      <div class="copyright">&copy; 2021. KKOWNG'S. All Rights Reserved</div>
+      <div class="copyright">&copy; 2021. KKOWNG'S. All rights reserved.</div>
     </div>
   </footer>
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
 <style lang="scss" scoped>
