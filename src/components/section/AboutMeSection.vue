@@ -61,22 +61,28 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/scss/mixins";
+
 #about-me {
   background-color: #fbfbfd;
   .info-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 32px 16px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem 1rem;
+    @include media(large) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include media(medium) {
+      grid-template-columns: none;
+    }
     .info-item {
       flex: 1;
       display: flex;
       align-items: center;
-      gap: 20px;
-      min-width: 320px;
-
+      gap: 1.25rem;
       > :last-child {
         display: grid;
-        gap: 8px;
+        gap: 0.5rem;
         > :first-child {
           font-size: 1.5rem;
           font-weight: 500;
