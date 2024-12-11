@@ -4,17 +4,18 @@
 #app {
   font-family: "Pretendard", sans-serif;
   color: #333;
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
+}
 
-  .fade-enter-active,
-  .fade-leave-active {
-    transition: opacity 0.5s ease;
-  }
-  .fade-enter-from,
-  .fade-leave-to {
-    opacity: 0;
-  }
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }

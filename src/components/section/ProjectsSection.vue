@@ -15,7 +15,7 @@
                 </Button>
               </a>
               <div class="project-url">
-                <a :href="theProject.url" target="_blank"> Link </a>
+                <!-- <a :href="theProject.url" target="_blank"> Link </a> -->
               </div>
             </template>
             <template v-else>
@@ -64,11 +64,15 @@
           </Button>
         </div>
       </div>
+
+      <Transition name="fade">
+        <div v-if="isShowProject" class="modal"></div>
+      </Transition>
     </div>
 
-    <transition name="fade">
-      <DetailProject v-if="isShowProject" />
-    </transition>
+    <Transition name="fade-slide-down">
+      <DetailProject v-if="isShowProject" :isShowProject="isShowProject" />
+    </Transition>
   </SectionLayout>
 </template>
 
@@ -168,5 +172,24 @@ export default {
       }
     }
   }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(color($dark), 0.4);
+}
+
+.fade-slide-down-enter-active,
+.fade-slide-down-leave-active {
+  transition: all 0.5s ease;
+}
+.fade-slide-down-enter-from,
+.fade-slide-down-leave-to {
+  opacity: 0;
+  transform: translateY(-50px);
 }
 </style>
