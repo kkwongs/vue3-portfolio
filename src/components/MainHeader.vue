@@ -101,6 +101,8 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 1280px;
+    margin: auto;
     padding: 1.25rem 2.5rem;
 
     $header-y-padding: 1rem;
