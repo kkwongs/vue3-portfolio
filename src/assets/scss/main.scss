@@ -1,9 +1,11 @@
 @import "fonts";
 @import "reset";
+@import "colors";
+@import "functions";
 
 #app {
   font-family: "Pretendard", sans-serif;
-  color: #333;
+  color: color($dark);
 }
 
 a {

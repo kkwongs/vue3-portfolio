@@ -1,13 +1,14 @@
-import projectInfo from './projectInfo'
+import projectInfo from "./projectInfo";
 
 export default {
   namespaced: true,
   state() {
     return {
       isShowProject: false,
-      projectNum: '',
-      projectInfo
-    }
+      isShowProjectImage: false,
+      projectNum: null,
+      projectInfo,
+    };
   },
   mutations: {
     showProject(state, payload) {
@@ -16,6 +17,13 @@ export default {
     },
     closeProject(state) {
       state.isShowProject = false;
-    }
-  }
-}
+    },
+    showProjectImage(state, payload) {
+      state.isShowProjectImage = true;
+      state.projectNum = payload;
+    },
+    closeProjectImage(state) {
+      state.isShowProjectImage = false;
+    },
+  },
+};

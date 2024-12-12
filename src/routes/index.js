@@ -9,20 +9,14 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory("vue3-portfolio"),
-  scrollBehavior(to) {
-    if (to.hash) {
-      return {
-        el: to.hash,
-        behavior: "smooth",
-      };
+  routes,
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
     } else {
-      return {
-        top: 0,
-        behavior: "smooth",
-      };
+      return { top: 0 };
     }
   },
-  routes,
 });
 
 export default router;

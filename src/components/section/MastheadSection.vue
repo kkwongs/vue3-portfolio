@@ -19,7 +19,7 @@ export default {
 <style lang="scss" scoped>
 .section-wrapper {
   position: relative;
-  color: #f5f5f7;
+  color: #f8f9fa;
   &::before {
     content: "";
     position: absolute;
@@ -28,7 +28,7 @@ export default {
     z-index: -1;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(110, 90, 80, 0.7), rgba(110, 90, 80, 0.7)),
+    background: linear-gradient(rgba(#6e5a50, 0.7), rgba(#6e5a50, 0.7)),
       url("@/assets/masthead-background.jpg") center / cover fixed;
   }
   .content {

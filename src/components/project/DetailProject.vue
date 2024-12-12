@@ -1,10 +1,6 @@
 <template>
   <div class="modal-background" @click.self="closeProject">
-    <div
-      class="modal-wrapper"
-      :class="{ 'modal-wrapper--active': isShowProject }"
-      @click.self="closeProject"
-    >
+    <div class="modal-wrapper" @click.self="closeProject">
       <div class="modal-container">
         <header>
           <span>README</span>
@@ -71,7 +67,7 @@
 
             <li v-if="projectInfo[projectNum].background">
               <div>
-                <FileDocumentIcon :size="28" class="material-icons" />
+                <LightbulbQuestionIcon :size="28" class="material-icons" />
                 <span>Background</span>
               </div>
               <div class="background-container">
@@ -85,7 +81,7 @@
 
             <li v-if="projectInfo[projectNum].meaning">
               <div>
-                <FileDocumentIcon :size="28" class="material-icons" />
+                <AccountAlertIcon :size="28" class="material-icons" />
                 <span>Meaning</span>
               </div>
               <div class="meaning-container">
@@ -124,6 +120,8 @@ import LinkIcon from "vue-material-design-icons/Link.vue";
 import FileDocumentIcon from "vue-material-design-icons/FileDocument.vue";
 import ToolsIcon from "vue-material-design-icons/Tools.vue";
 import CloseIcon from "vue-material-design-icons/Close.vue";
+import LightbulbQuestionIcon from "vue-material-design-icons/LightbulbQuestion.vue";
+import AccountAlertIcon from "vue-material-design-icons/AccountAlert.vue";
 
 export default {
   name: "DetailProject",
@@ -132,12 +130,8 @@ export default {
     FileDocumentIcon,
     ToolsIcon,
     CloseIcon,
-  },
-  props: {
-    isShowProject: {
-      type: Boolean,
-      default: false,
-    },
+    LightbulbQuestionIcon,
+    AccountAlertIcon,
   },
   data() {
     return {
@@ -152,13 +146,18 @@ export default {
       window.innerWidth - document.documentElement.clientWidth;
     document.body.style.paddingRight = `${scrollBarWidth}px`;
     document.body.style.overflow = "hidden";
+    document.addEventListener("keydown", this.keydownESC);
   },
   beforeUnmount() {
     document.body.style.paddingRight = "0";
     document.body.style.overflow = "auto";
+    document.removeEventListener("keydown", this.keydownESC);
   },
   methods: {
     ...mapMutations("project", ["closeProject"]),
+    keydownESC(e) {
+      if (e.key === "Escape") this.closeProject();
+    },
   },
 };
 </script>
@@ -183,11 +182,7 @@ export default {
     max-width: 800px;
     min-height: calc(100% - $modal-margin-x * 2);
     margin: $modal-margin-x auto;
-    transform: translateY(-50px);
-    transition: all 2s;
-    &--active {
-      transform: none;
-    }
+    transition: max-width 0.3s;
     @include media(large) {
       max-width: 500px;
     }
@@ -215,13 +210,13 @@ export default {
       .content {
         .title-container {
           padding: 1.25rem;
-          border-bottom: 1px solid #eee;
+          border-bottom: 1px solid rgba(color($dark), 0.1);
           .title {
             font-size: 1.5rem;
             font-weight: bold;
           }
           .sub-title {
-            color: #888;
+            color: rgba(color($dark), 0.5);
           }
         }
         .info {

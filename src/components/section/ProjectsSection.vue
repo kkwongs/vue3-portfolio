@@ -51,7 +51,8 @@
         <div class="project-readme">
           <a :href="theProject.github" target="_blank">
             <Button variant="outlined" color="dark" size="small">
-              GitHub Link
+              <img src="@/assets/git-hub-logo.png" alt="GitHub" />
+              <span>GitHub Link</span>
             </Button>
           </a>
           <Button
@@ -60,18 +61,33 @@
             size="small"
             @clicked="showProject(index)"
           >
-            README
+            <BookOpenVariantOutlineIcon />
+            <span>README</span>
+          </Button>
+          <Button
+            v-if="theProject.images"
+            variant="outlined"
+            color="dark"
+            size="small"
+            @clicked="showProjectImage(index)"
+          >
+            <ImageOutlineIcon />
+            <span>이미지</span>
           </Button>
         </div>
       </div>
 
       <Transition name="fade">
-        <div v-if="isShowProject" class="modal"></div>
+        <div v-if="isShowProject || isShowProjectImage" class="modal"></div>
       </Transition>
     </div>
 
     <Transition name="fade-slide-down">
-      <DetailProject v-if="isShowProject" :isShowProject="isShowProject" />
+      <DetailProject v-if="isShowProject" />
+    </Transition>
+
+    <Transition name="fade-slide-down">
+      <ProjectImages v-if="isShowProjectImage" />
     </Transition>
   </SectionLayout>
 </template>
@@ -80,21 +96,31 @@
 import { mapState, mapMutations } from "vuex";
 // import SwiperProject from "../project/SwiperProject.vue";
 import DetailProject from "../project/DetailProject.vue";
+import ProjectImages from "@/components/project/ProjectImages.vue";
 import SectionLayout from "./SectionLayout.vue";
 import Button from "../BaseButton.vue";
+import BookOpenVariantOutlineIcon from "vue-material-design-icons/BookOpenVariantOutline.vue";
+import ImageOutlineIcon from "vue-material-design-icons/ImageOutline.vue";
 
 export default {
   components: {
     // SwiperProject,
     DetailProject,
+    ProjectImages,
     SectionLayout,
     Button,
+    BookOpenVariantOutlineIcon,
+    ImageOutlineIcon,
   },
   computed: {
-    ...mapState("project", ["projectInfo", "isShowProject"]),
+    ...mapState("project", [
+      "projectInfo",
+      "isShowProject",
+      "isShowProjectImage",
+    ]),
   },
   methods: {
-    ...mapMutations("project", ["showProject"]),
+    ...mapMutations("project", ["showProject", "showProjectImage"]),
   },
 };
 </script>
@@ -120,8 +146,9 @@ export default {
       padding: 32px;
       background-color: #fff;
       border-radius: 1rem;
+      box-shadow: 0 0 0.5rem rgba(color($dark), 0.2);
       .project-title {
-        border-bottom: 1px solid #e0e0e0;
+        border-bottom: 1px solid rgba(color($dark), 0.1);
         .project-name {
           display: flex;
           align-items: flex-end;
@@ -135,7 +162,7 @@ export default {
         }
         .project-period {
           padding: 0.25rem 0;
-          color: #888;
+          color: rgba(color($dark), 0.5);
         }
         .project-url {
           a {
@@ -169,6 +196,17 @@ export default {
         display: flex;
         align-items: flex-start;
         gap: 0.5rem;
+        .c-btn {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          > :first-child {
+            display: inline-flex;
+            align-items: center;
+            width: 16px;
+            height: 16px;
+          }
+        }
       }
     }
   }
