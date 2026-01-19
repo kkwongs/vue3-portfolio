@@ -25,7 +25,7 @@ export default {
       items: [
         { label: "이름", content: "권기현" },
         { label: "생년월일", content: "1995.10.26" },
-        { label: "주소", content: "경기도 용인시 기흥구" },
+        { label: "주소", content: "경기도 화성시 동탄" },
         { label: "연락처", content: "010-6512-5741" },
         { label: "이메일", content: "kihyun5741@gmail.com" },
         { label: "학력", content: "단국대학교 소프트웨어학과" },
@@ -38,22 +38,22 @@ export default {
   methods: {
     async setIcon() {
       this.items[0].icon = markRaw(
-        (await import("vue-material-design-icons/Account.vue")).default
+        (await import("vue-material-design-icons/Account.vue")).default,
       );
       this.items[1].icon = markRaw(
-        (await import("vue-material-design-icons/Calendar.vue")).default
+        (await import("vue-material-design-icons/Calendar.vue")).default,
       );
       this.items[2].icon = markRaw(
-        (await import("vue-material-design-icons/MapMarker.vue")).default
+        (await import("vue-material-design-icons/MapMarker.vue")).default,
       );
       this.items[3].icon = markRaw(
-        (await import("vue-material-design-icons/Cellphone.vue")).default
+        (await import("vue-material-design-icons/Cellphone.vue")).default,
       );
       this.items[4].icon = markRaw(
-        (await import("vue-material-design-icons/Email.vue")).default
+        (await import("vue-material-design-icons/Email.vue")).default,
       );
       this.items[5].icon = markRaw(
-        (await import("vue-material-design-icons/School.vue")).default
+        (await import("vue-material-design-icons/School.vue")).default,
       );
     },
   },
