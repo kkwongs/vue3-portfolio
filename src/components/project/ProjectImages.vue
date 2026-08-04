@@ -159,7 +159,8 @@ export default {
         .swiper-wrapper {
           width: calc(800px - 5rem);
           @include media(large) {
-            width: calc(500px - 5rem);
+            width: calc(100% - 5rem);
+            --swiper-navigation-size: 1.5rem;
           }
           padding: 2.5rem 2.5rem;
           --swiper-navigation-size: 2rem;

@@ -49,7 +49,7 @@
         </ul>
 
         <div class="project-readme">
-          <a :href="theProject.github" target="_blank">
+          <a v-if="theProject.github" :href="theProject.github" target="_blank">
             <Button variant="outlined" color="dark" size="small">
               <img src="@/assets/git-hub-logo.png" alt="GitHub" />
               <span>GitHub Link</span>
@@ -196,6 +196,7 @@ export default {
         display: flex;
         align-items: flex-start;
         gap: 0.5rem;
+        flex-wrap: wrap;
         .c-btn {
           display: flex;
           align-items: center;
