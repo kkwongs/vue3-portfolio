@@ -38,7 +38,8 @@
                 v-for="(image, index) in projectInfo[projectNum].images"
                 :key="index"
               >
-                <img :src="image" alt="" />
+                <div class="img-title">{{ image.title }}</div>
+                <img :src="image.src" alt="" />
               </swiper-slide>
             </swiper>
 
@@ -168,6 +169,13 @@ export default {
           --swiper-pagination-color: #333;
           .c-swiper {
             background-color: #fff;
+          }
+
+          .img-title {
+            text-align: center;
+            padding: 4px;
+            font-size: 18px;
+            font-weight: bold;
           }
         }
       }

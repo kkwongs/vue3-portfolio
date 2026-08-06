@@ -12,15 +12,34 @@ const projectInfo = [
       </a>`,
     ],
     technologies: [
-      "Frontend: Vue.js, Pinia, Tailwind CSS",
+      "Frontend: Vue.js, Pinia, SCSS, Tailwind CSS",
       "Backend: Java, PostgreSQL, Apache Maven",
       "Design: Figma, Zeplin",
       "Deployment: Company Server",
     ],
     // github: "https://github.com/95team/gg-pigs-web",
-    // images: [],
+    images: [
+      {
+        title: "홈페이지",
+        src: `${require("@/assets/projects/mice360/1.gif")}`,
+      },
+      {
+        title: "행사 개설",
+        src: `${require("@/assets/projects/mice360/2.gif")}`,
+      },
+      {
+        title: "행사 홈페이지 생성",
+        src: `${require("@/assets/projects/mice360/3.gif")}`,
+      },
+      {
+        title: "행사 가입",
+        src: `${require("@/assets/projects/mice360/4.gif")}`,
+      },
+    ],
     mainFunction:
       "회원 관리, 예산서 관리, 스케줄 관리, 참가·발표·전시 신청 관리",
+
+    // role: [],
     background: [
       "코로나19 이후 변화한 전시·컨벤션 산업 환경에 대응하기 위해 추진된 산업통상자원부 R&D 과제 「포스트 코로나 대응 MICE 산업 활성화를 위한 온·오프라인 연계 전시·컨벤션 통합지원 서비스 플랫폼 개발」에 프론트엔드 개발자로 참여했어요.",
       "주최자, 참가자, 전시사가 온라인과 오프라인 환경에서 효율적으로 소통할 수 있도록 지원하는 통합 플랫폼 구축 프로젝트였으며, 디지털 트윈과 온라인 전시 등 새로운 전시 경험을 제공하는 것을 목표로 진행됐어요.",
@@ -96,12 +115,24 @@ const projectInfo = [
     ],
     github: "https://github.com/95team/gg-pigs-web",
     images: [
-      `${require("@/assets/projects/gg-pigs/1.png")}`,
-      `${require("@/assets/projects/gg-pigs/2.png")}`,
-      `${require("@/assets/projects/gg-pigs/3.png")}`,
-      `${require("@/assets/projects/gg-pigs/4.png")}`,
-      `${require("@/assets/projects/gg-pigs/5.png")}`,
-      `${require("@/assets/projects/gg-pigs/6.png")}`,
+      {
+        src: `${require("@/assets/projects/gg-pigs/1.png")}`,
+      },
+      {
+        src: `${require("@/assets/projects/gg-pigs/2.png")}`,
+      },
+      {
+        src: `${require("@/assets/projects/gg-pigs/3.png")}`,
+      },
+      {
+        src: `${require("@/assets/projects/gg-pigs/4.png")}`,
+      },
+      {
+        src: `${require("@/assets/projects/gg-pigs/5.png")}`,
+      },
+      {
+        src: `${require("@/assets/projects/gg-pigs/6.png")}`,
+      },
     ],
     mainFunction: "광고 배너 등록, 테마(라이트 모드, 다크 모드) 설정",
     background: [
