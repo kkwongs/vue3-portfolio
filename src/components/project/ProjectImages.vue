@@ -30,7 +30,6 @@
                 prevEl: '.swiper-button-prev',
               }"
               :pagination="{ el: '.swiper-pagination', clickable: true }"
-              :loop="true"
               :autoHeight="true"
               class="c-swiper"
             >
@@ -169,6 +168,9 @@ export default {
           --swiper-pagination-color: #333;
           .c-swiper {
             background-color: #fff;
+            .swiper-slide {
+              justify-items: center;
+            }
           }
 
           .img-title {

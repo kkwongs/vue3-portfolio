@@ -1,8 +1,74 @@
 const projectInfo = [
   {
+    name: "Learn Flow",
+    period: "2026.09 ~ 진행 중",
+    title: "온라인 강의 플랫폼",
+    details: [
+      `React·Next.js·TanStack Query·Mantine 기반 온라인 강의 플랫폼 개발`,
+      `pnpm + Turborepo를 활용한 모노레포 구조 설계`,
+    ],
+    technologies: [
+      "Frontend: React, Next.js(Pages Router), TanStack Query, Mantine",
+      "Monorepo: pnpm workspace, Turborepo",
+    ],
+    github: "https://github.com/kkwongs/learn-flow",
+    mainFunction:
+      "공통 레이아웃과 디자인 시스템을 구성하고, 강의 목록·상세·대시보드 화면을 개발하고 있어요.",
+    background: [
+      "Vue를 주로 사용해왔지만, React 생태계에서도 지금까지의 개발 경험을 적용해보고 싶어 시작한 프로젝트예요.",
+      "인프랩 지원을 준비하면서 React와 Next.js를 직접 사용해보고, 온라인 강의 서비스를 하나씩 만들어보고 있어요.",
+    ],
+    meaning: [
+      "Vue에서 익힌 컴포넌트 설계와 상태 관리 경험을 React에 적용하면서 두 생태계의 차이도 직접 경험해보고 있어요.",
+      "현재는 모노레포 구조와 공통 레이아웃, 데이터 조회 환경을 구성한 단계이며 강의 목록·상세·대시보드 기능을 이어서 개발할 예정이에요.",
+    ],
+  },
+  {
+    name: "Bus Seat",
+    period: "2026.08 ~ 진행 중",
+    title: "광역버스 예약 서비스",
+    url: "https://kkwongs.github.io/bus-seat/",
+    details: [
+      `출퇴근 시간대 광역버스를 미리 예약할 수 있는 버스 좌석 예약 서비스`,
+      `Vue3 Composition API`,
+      `MSW를 활용한 Mock API 환경 구성`,
+    ],
+    technologies: [
+      "Frontend: Vue.js, TypeScript, Pinia, Tailwind CSS",
+      "Build: Vite",
+      "Mock API: MSW",
+      "Deployment: GitHub Pages",
+    ],
+    github: "https://github.com/kkwongs/bus-seat",
+    images: [
+      {
+        title: "노선 조회",
+        src: `${require("@/assets/projects/bus-seat/1.gif")}`,
+      },
+      {
+        title: "노선 상세 및 정류장 조회",
+        src: `${require("@/assets/projects/bus-seat/2.gif")}`,
+      },
+      {
+        title: "노선 즐겨찾기 및 예약",
+        src: `${require("@/assets/projects/bus-seat/3.gif")}`,
+      },
+    ],
+    mainFunction: "노선 조회, 정류장 조회, 노선 즐겨찾기, 버스 예약",
+    background: [
+      "출퇴근 시간대 광역버스의 혼잡과 만차로 인해 원하는 시간에 탑승하기 어려운 문제에 착안해 시작한 개인 프로젝트예요.",
+      "실제 광역버스 예약 서비스의 사용자 흐름을 참고해 노선과 운행시간을 조회하고, 탑승·하차 정류장을 선택한 뒤 버스를 예약할 수 있는 서비스를 구현하고 있어요.",
+      "현재 노선 조회, 노선 상세, 정류장 조회, 즐겨찾기, 예약 등 핵심 사용자 흐름을 구현했으며, 실제 API 연동을 고려해 Mock API와 상태 관리 구조를 구성했어요.",
+    ],
+    meaning: [
+      "기존 업무에서 주로 사용했던 Vue.js를 기반으로 TypeScript와 Pinia를 함께 적용하며, 실제 서비스 개발을 가정한 프로젝트 구조를 직접 설계했어요.",
+      "단순한 화면 구현에 그치지 않고 노선, 운행시간, 정류장, 예약 가능 좌석 등 도메인 데이터를 구분하고 API 응답과 화면에서 사용하는 타입을 분리해 관리했어요.",
+      "현재 핵심 사용자 흐름을 중심으로 구현을 완료한 상태이며, 이후 실제 API 연동과 예약 기능을 확장할 수 있도록 Mock API와 환경변수를 분리해 개발하고 있어요.",
+    ],
+  },
+  {
     name: "MICE360",
     period: "2022.08 ~ 2026.03 (5인 팀 프로젝트)",
-    // url: "https://gg-pigs.com/",
     title: "전시·컨벤션 통합지원 플랫폼",
     details: [
       `포스트 코로나 대응 MICE 산업 활성화를 위한 온·오프라인 연계 전시·컨벤션 통합지원 서비스 플랫폼`,
@@ -17,7 +83,6 @@ const projectInfo = [
       "Design: Figma, Zeplin",
       "Deployment: Company Server",
     ],
-    // github: "https://github.com/95team/gg-pigs-web",
     images: [
       {
         title: "홈페이지",
