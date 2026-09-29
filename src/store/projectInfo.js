@@ -2,25 +2,26 @@ const projectInfo = [
   {
     name: "Learn Flow",
     period: "2026.09 ~ 진행 중",
-    title: "온라인 강의 플랫폼",
+    title: "개발자 학습 플랫폼",
     details: [
-      `React·Next.js·TanStack Query·Mantine 기반 온라인 강의 플랫폼 개발`,
-      `pnpm + Turborepo를 활용한 모노레포 구조 설계`,
+      `개발자의 강의 탐색부터 학습 진행까지 하나의 흐름으로 관리하는 온라인 학습 플랫폼`,
+      `React · Next.js 기반의 웹 서비스와 React Native 모바일 앱을 고려한 모노레포 구조 설계`,
     ],
     technologies: [
       "Frontend: React, Next.js(Pages Router), TanStack Query, Mantine",
+      "Mobile: React Native, Expo",
       "Monorepo: pnpm workspace, Turborepo",
     ],
     github: "https://github.com/kkwongs/learn-flow",
     mainFunction:
-      "공통 레이아웃과 디자인 시스템을 구성하고, 강의 목록·상세·대시보드 화면을 개발하고 있어요.",
+      "강의 탐색·상세·학습·대시보드 기능을 구현하고, Web과 Mobile에서 재사용할 수 있는 API·타입·유틸리티 구조를 설계하고 있어요.",
     background: [
-      "Vue를 주로 사용해왔지만, React 생태계에서도 지금까지의 개발 경험을 적용해보고 싶어 시작한 프로젝트예요.",
-      "인프랩 지원을 준비하면서 React와 Next.js를 직접 사용해보고, 온라인 강의 서비스를 하나씩 만들어보고 있어요.",
+      "Vue를 주로 사용해왔지만 React 생태계의 렌더링 방식과 상태 관리, Next.js의 SSR/CSR 구조를 직접 경험해보고 싶어 시작한 프로젝트예요.",
+      "실제 온라인 학습 서비스를 만든다는 목표로 기능을 구현하면서, 프론트엔드 아키텍처와 사용자 경험을 함께 고민하고 있어요.",
     ],
     meaning: [
-      "Vue에서 익힌 컴포넌트 설계와 상태 관리 경험을 React에 적용하면서 두 생태계의 차이도 직접 경험해보고 있어요.",
-      "현재는 모노레포 구조와 공통 레이아웃, 데이터 조회 환경을 구성한 단계이며 강의 목록·상세·대시보드 기능을 이어서 개발할 예정이에요.",
+      "Vue에서 익힌 컴포넌트 설계와 상태 관리 경험을 React에 적용하고, 두 생태계의 차이를 직접 비교하며 이해하고 있어요.",
+      "웹과 모바일을 하나의 모노레포에서 관리하면서 UI와 도메인 로직의 공유 범위를 고민하고, 실무적인 프로젝트 구조를 만들어가고 있어요.",
     ],
   },
   {
