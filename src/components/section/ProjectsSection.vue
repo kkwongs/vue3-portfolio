@@ -149,6 +149,7 @@ export default {
       box-shadow: 0 0 0.5rem rgba(color($dark), 0.2);
       .project-title {
         border-bottom: 1px solid rgba(color($dark), 0.1);
+        align-self: flex-start;
         .project-name {
           display: flex;
           align-items: flex-end;

@@ -65,6 +65,35 @@
               </div>
             </li>
 
+            <li v-if="projectInfo[projectNum].technologies">
+              <div>
+                <ToolsIcon :size="28" class="material-icons" />
+                <span>Technology Stack(s)</span>
+              </div>
+              <ul class="tech-container">
+                <li
+                  v-for="technology in projectInfo[projectNum].technologies"
+                  :key="technology"
+                >
+                  {{ technology }}
+                </li>
+              </ul>
+            </li>
+
+            <li v-if="projectInfo[projectNum].role">
+              <div>
+                <ClipboardAccountIcon :size="28" class="material-icons" />
+                <span>My Role</span>
+              </div>
+              <div class="role-container">
+                <p
+                  v-for="role in projectInfo[projectNum].role"
+                  :key="role"
+                  v-html="role"
+                ></p>
+              </div>
+            </li>
+
             <li v-if="projectInfo[projectNum].background">
               <div>
                 <LightbulbQuestionIcon :size="28" class="material-icons" />
@@ -92,21 +121,6 @@
                 ></p>
               </div>
             </li>
-
-            <li v-if="projectInfo[projectNum].technologies">
-              <div>
-                <ToolsIcon :size="28" class="material-icons" />
-                <span>Technology Stack(s)</span>
-              </div>
-              <ul class="tech-container">
-                <li
-                  v-for="technology in projectInfo[projectNum].technologies"
-                  :key="technology"
-                >
-                  {{ technology }}
-                </li>
-              </ul>
-            </li>
           </ul>
         </div>
       </div>
@@ -122,6 +136,7 @@ import ToolsIcon from "vue-material-design-icons/Tools.vue";
 import CloseIcon from "vue-material-design-icons/Close.vue";
 import LightbulbQuestionIcon from "vue-material-design-icons/LightbulbQuestion.vue";
 import AccountAlertIcon from "vue-material-design-icons/AccountAlert.vue";
+import ClipboardAccountIcon from "vue-material-design-icons/ClipboardAccount.vue";
 
 export default {
   name: "DetailProject",
@@ -132,6 +147,7 @@ export default {
     CloseIcon,
     LightbulbQuestionIcon,
     AccountAlertIcon,
+    ClipboardAccountIcon,
   },
   data() {
     return {
